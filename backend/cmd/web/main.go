@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"net/http"
+)
 
 func main() {
-	fmt.Println("Hello")
+	router := routes()
+
+	log.Println("Starting server on port 8080")
+
+	_ = http.ListenAndServe(":8080", router)
 }

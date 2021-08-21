@@ -1,10 +1,11 @@
-FROM golang:1.17rc1-alpine
+FROM golang:1.17.0-buster
 
 WORKDIR /backend
 
-RUN apk update && apk add curl
+# RUN apk update && apk add curl
 
 COPY go.mod ./
+COPY go.sum ./
 
 RUN go mod download
 
@@ -17,7 +18,7 @@ COPY . .
 
 RUN air init
 
-RUN go run cmd/web/main.go
+RUN go run /backend/cmd/web/main.go
 
 CMD [ "air", "-d" ]
 

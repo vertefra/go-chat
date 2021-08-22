@@ -1,10 +1,11 @@
-package main
+package web
 
 import (
 	"net/http"
 
+	"vertefra/go-chat/internal/handlers"
+
 	"github.com/bmizerany/pat"
-	"github.com/vertefra/go-chat/internal/handlers"
 )
 
 func routes() http.Handler {

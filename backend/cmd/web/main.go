@@ -1,14 +1,14 @@
-package main
+package web
 
 import (
 	"log"
 	"net/http"
 )
 
-func main() {
+func Web() {
 	router := routes()
 
 	log.Println("Starting server on port 8080")
 
-	_ = http.ListenAndServe(":8080", router)
+	http.ListenAndServe(":8080", router)
 }

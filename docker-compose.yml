@@ -1,9 +1,0 @@
-version: '3.6'
-
-services: 
-    backend:
-        build:
-            context: ./backend
-            dockerfile: Dockerfile.dev
-        volumes: 
-            - ./backend:/backend

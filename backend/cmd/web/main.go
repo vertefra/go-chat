@@ -3,7 +3,7 @@ package web
 import (
 	"log"
 	"net/http"
-	"vertefra/go-chat/internal/handlers"
+	ws "vertefra/go-chat/internal/websocket"
 )
 
 func Web() {
@@ -11,7 +11,7 @@ func Web() {
 
 	log.Println("Starting channel listener")
 
-	go handlers.ListenToWSChannel()
+	go ws.ListenToWSChannel()
 
 	log.Println("Starting server on port 8080")
 
